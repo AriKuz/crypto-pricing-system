@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpc;
+option go_package = ".";
+
+service PricingService {
+  rpc getPrices(Request) returns (Response) {}
+}
+
+message Request {
+  string token_name = 1;
+}
+
+message Response {
+  string token = 1;
+  double price = 2;
+}
